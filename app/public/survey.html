@@ -286,6 +286,14 @@
 
 
   <script type="text/javascript">
+
+    function indexOfSmallest(arr) {
+      var lowest = 0;
+      for (var i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[lowest]) lowest = i;
+      }
+      return lowest;
+    }
     // validate form completion
     $('#submit').on('click', function() {
       event.preventDefault();
@@ -312,6 +320,37 @@
       $.post("/api/friends", newFriend)
         .then(function(data) {
           console.log(data);
+          let differences = [];
+          let matchedFriend = data[0];
+          
+          // Loop through each existing friend (minus the newly added friend, so you don't match with yourself)
+          for (let i = 0; i < data.length - 1; i++) {
+
+            let totalDifference = 0;
+            console.log(data[i].name);
+            // loop through the scores array
+            for (let j = 0; j < data[i].scores.length; j++) {
+
+              // capture the difference of each data point
+              let comparedScore = newFriend.scores[j] - data[i].scores[j];
+              // Get absolute value
+              if (comparedScore < 0) {
+                comparedScore *= -1;
+              }
+              // Increment the totalDifference for each compared data point
+              totalDifference += comparedScore
+              
+            }
+            console.log("Difference: " + totalDifference);
+            differences.push(totalDifference);
+
+            // Set the matchedFriend based on the index of the smallest difference found from each score comparison
+            matchedFriend = data[indexOfSmallest(differences)];            
+          }
+
+          // Display the appropriate data for the matched friend
+          $('#match-img').attr('src', matchedFriend.photo);
+          $('#match-name').text(matchedFriend.name);
         });
     })
   </script>

@@ -14,3 +14,16 @@
 .agree-disagree {
   display: inline;
 }
+
+#match-img {
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+#match-name {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
+}
