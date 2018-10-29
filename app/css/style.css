@@ -1,0 +1,16 @@
+.question-wrapper {
+  margin-bottom: 30px;
+}
+
+.question-wrapper label {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.question-wrapper input {
+  margin-right: 5px;
+}
+
+.agree-disagree {
+  display: inline;
+}
