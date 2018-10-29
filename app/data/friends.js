@@ -33,7 +33,7 @@ var friends = [
   },
   {
     "name":"Simone",
-    "photo":"https://scontent.fphl2-3.fna.fbcdn.net/v/t1.0-9/523073_10151047288465959_1609424360_n.jpg?_nc_cat=104&_nc_ht=scontent.fphl2-3.fna&oh=769fdadb2d7315100d0253bd22f1c164&oe=5C4AB6EB",
+    "photo":"https://nerdist.com/wp-content/uploads/2018/10/The-Good-Place-Featured-101518.jpg",
     "scores":[
         1,
         1,
