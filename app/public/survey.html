@@ -17,7 +17,7 @@
 
     <h2>Survey Questions</h2>
     <hr>
-    
+
     <h3>
       <strong>About You</strong>
     </h3>
@@ -383,6 +383,9 @@
         event.stopPropagation();
         alert("You must fill out the entire form before submitting.")
       }
+    })
+    $('button[data-dismiss]').on('click', function() {
+      location.reload();
     })
   </script>
 </body>
